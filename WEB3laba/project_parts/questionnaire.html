@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання 4 - Анкета</title>
+</head>
+<body>
+    <h1 align="center">Завдання 4: Анкета користувача</h1>
+
+    <!-- За замовчуванням форма налаштована на GET для демонстрації параметрів у URL -->
+    <form action="" method="get">
+
+        <!-- Блок 1: Особисті дані -->
+        <fieldset>
+            <legend><b>1. Особисті та контактні дані</b></legend>
+
+            <p>
+                <label for="fullname">Прізвище та ім'я (обов'язково):</label><br>
+                <input type="text" id="fullname" name="fullname" value="Іваненко Іван"
+                       placeholder="Введіть ваше ім'я" required tabindex="1">
+            </p>
+
+            <p>
+                <label for="user_email">Електронна пошта (autocomplete вимкнено):</label><br>
+                <input type="email" id="user_email" name="user_email" value="student@chnu.edu.ua"
+                       placeholder="name@example.com" autocomplete="off"
+                       pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                       title="Введіть коректну email-адресу" required tabindex="2">
+            </p>
+
+            <p>
+                <label for="user_tel">Мобільний номер (+380XXXXXXXXX):</label><br>
+                <input type="tel" id="user_tel" name="user_tel" value="+380501234567"
+                       placeholder="+380XXXXXXXXX"
+                       pattern="\+380[0-9]{9}"
+                       title="Формат: +380 та 9 цифр номера" required tabindex="3">
+            </p>
+
+            <p>
+                <label for="user_pass">Пароль (6 символів: мін. 1 велика, 1 мала літера та 1 цифра):</label><br>
+                <input type="password" id="user_pass" name="user_pass" value="Pass12"
+                       placeholder="Наприклад: Abc123"
+                       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6}"
+                       title="Рівно 6 символів, хоча б одна велика літера, одна мала літера та одна цифра"
+                       required tabindex="4">
+            </p>
+
+            <p>
+                <label for="birth_date">Дата народження:</label><br>
+                <input type="date" id="birth_date" name="birth_date" value="2006-05-15" required tabindex="5">
+            </p>
+        </fieldset>
+        <br>
+
+        <!-- Блок 2: Радіокнопки та прапорці -->
+        <fieldset>
+            <legend><b>2. Навчання та інтереси</b></legend>
+
+            <p>
+                <span>Ваш курс (Блок radio №1):</span><br>
+                <input type="radio" id="course1" name="course" value="1" tabindex="6" required>
+                <label for="course1">1 курс</label>
+
+                <input type="radio" id="course2" name="course" value="2" tabindex="7">
+                <label for="course2">2 курс</label>
+
+                <input type="radio" id="course3" name="course" value="3" tabindex="8">
+                <label for="course3">3 курс</label>
+            </p>
+
+            <p>
+                <span>Форма навчання (Блок radio №2, з активним значенням за замовчуванням):</span><br>
+                <input type="radio" id="form_day" name="study_form" value="full_time" checked tabindex="9">
+                <label for="form_day">Денна</label>
+
+                <input type="radio" id="form_ext" name="study_form" value="part_time" tabindex="10">
+                <label for="form_ext">Заочна</label>
+
+                <input type="radio" id="form_dual" name="study_form" value="dual" tabindex="11">
+                <label for="form_dual">Дуальна</label>
+            </p>
+
+            <p>
+                <span>Які технології ви вивчаєте? (Блок checkbox із 4 значеннями):</span><br>
+                <input type="checkbox" id="tech_html" name="tech" value="HTML5" checked tabindex="12">
+                <label for="tech_html">HTML5</label>
+
+                <input type="checkbox" id="tech_css" name="tech" value="CSS3" tabindex="13">
+                <label for="tech_css">CSS3</label>
+
+                <input type="checkbox" id="tech_js" name="tech" value="JavaScript" tabindex="14">
+                <label for="tech_js">JavaScript</label>
+
+                <input type="checkbox" id="tech_git" name="tech" value="Git" tabindex="15">
+                <label for="tech_git">Git</label>
+            </p>
+        </fieldset>
+        <br>
+
+        <!-- Блок 3: Випадні списки та Datalist -->
+        <fieldset>
+            <legend><b>3. Вибір спеціалізації та інструментів</b></legend>
+
+            <p>
+                <label for="english_level">Рівень англійської (5 значень, 3-тє за замовчуванням):</label><br>
+                <select id="english_level" name="english_level" tabindex="16">
+                    <option value="A1">Beginner (A1)</option>
+                    <option value="A2">Elementary (A2)</option>
+                    <option value="B1" selected>Intermediate (B1)</option>
+                    <option value="B2">Upper-Intermediate (B2)</option>
+                    <option value="C1">Advanced (C1)</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="os_select">Операційні системи (6 значень, множинний вибір із Ctrl/Cmd):</label><br>
+                <select id="os_select" name="os_select" multiple size="4" tabindex="17">
+                    <option value="windows" selected>Windows</option>
+                    <option value="linux">Linux (Ubuntu/Debian)</option>
+                    <option value="macos">macOS</option>
+                    <option value="android">Android</option>
+                    <option value="ios">iOS</option>
+                    <option value="freebsd">FreeBSD</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="direction">Улюблений інструмент (4 групи optgroup по 3 значення):</label><br>
+                <select id="direction" name="direction" tabindex="18">
+                    <optgroup label="Frontend">
+                        <option value="react">React</option>
+                        <option value="vue">Vue.js</option>
+                        <option value="angular">Angular</option>
+                    </optgroup>
+                    <optgroup label="Backend">
+                        <option value="nodejs">Node.js</option>
+                        <option value="django">Django</option>
+                        <option value="spring">Spring Boot</option>
+                    </optgroup>
+                    <optgroup label="Бази даних">
+                        <option value="postgresql">PostgreSQL</option>
+                        <option value="mysql">MySQL</option>
+                        <option value="mongodb">MongoDB</option>
+                    </optgroup>
+                    <optgroup label="Дизайн">
+                        <option value="figma">Figma</option>
+                        <option value="photoshop">Photoshop</option>
+                        <option value="illustrator">Illustrator</option>
+                    </optgroup>
+                </select>
+            </p>
+
+            <p>
+                <label for="ide_choice">Ваша улюблена IDE (список із підказками datalist):</label><br>
+                <input list="ide_list" id="ide_choice" name="ide_choice" value="VS Code"
+                       placeholder="Оберіть або введіть IDE" tabindex="19">
+                <datalist id="ide_list">
+                    <option value="VS Code"></option>
+                    <option value="WebStorm"></option>
+                    <option value="Sublime Text"></option>
+                    <option value="Atom"></option>
+                    <option value="Eclipse"></option>
+                </datalist>
+            </p>
+        </fieldset>
+        <br>
+
+        <!-- Блок 4: Файли та додаткова інформація -->
+        <fieldset>
+            <legend><b>4. Додаткові матеріали та коментарі</b></legend>
+
+            <p>
+                <label for="audio_files">Завантажте улюблені аудіо-треки (тільки аудіо, можна декілька):</label><br>
+                <input type="file" id="audio_files" name="audio_files" value=""
+                       accept="audio/*" multiple tabindex="20">
+            </p>
+
+            <p>
+                <label for="about_me">Коротко про себе:</label><br>
+                <textarea id="about_me" name="about_me" rows="4" cols="50"
+                          placeholder="Напишіть декілька слів про ваші цілі та хобі..."
+                          tabindex="21">Вивчаю веб-технології в ЧНУ.</textarea>
+            </p>
+        </fieldset>
+        <br>
+
+        <!-- Кнопки управління формою -->
+        <div align="center">
+            <!-- Відправка методом GET (відобразить структуру запиту в URL-адресі) -->
+            <button type="submit" name="submit_btn" value="get_request" tabindex="22">
+                Відправити (GET у URL)
+            </button>
+
+            <!-- Відправка методом POST + multipart/form-data -->
+            <button type="submit" name="submit_btn" value="post_request"
+                    formmethod="post" formenctype="multipart/form-data" tabindex="23">
+                Відправити (POST + multipart/form-data)
+            </button>
+
+            <button type="reset" name="reset_btn" value="reset" tabindex="24">
+                Очистити форму (Reset)
+            </button>
+        </div>
+    </form>
+
+    <p align="center"><a href="../index.html">Повернутись на головну</a></p>
+</body>
+</html>
