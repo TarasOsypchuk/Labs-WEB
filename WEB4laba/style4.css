@@ -1,0 +1,54 @@
+
+.text-background span {
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+div .text-background span {
+    background-color: yellow;
+}
+
+span span {
+    background-color: gray;
+    text-decoration: line-through;
+}
+
+ol span span {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+section > p {
+    text-shadow: 3px 3px 5px rgba(180, 50, 50, 0.6);
+    text-indent: 50px;
+}
+
+li > ul {
+    list-style-image: url('/resized-icon.jpg');
+}
+
+div > .text-background {
+    word-spacing: 50px;
+}
+
+
+.text-bold > p,
+.bold > p {
+    font-weight: bold;
+}
+
+.text-bold > section > p,
+.bold > section > p {
+    line-height: 45px;
+}
+
+/*Комбінатор наступного сусіднього елемента одного рівня двох тегів (adjacent sibling) */
+img + p {
+    background-color: brown;
+}
+
+/*Комбінатор усіх наступних сусідніх елементів одного рівня двох тегів (general sibling) */
+section ~ p {
+    color: red;
+}

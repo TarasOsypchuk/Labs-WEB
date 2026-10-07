@@ -1,0 +1,39 @@
+
+a {
+  color: #7b1fa2;
+}
+
+
+.top-link {
+  color: #1e7e34;
+  font-weight: bold;
+}
+
+
+.berries-list {
+  list-style-type: square;
+}
+
+
+.check-list {
+  list-style-image: url("/resized-icon.jpg");
+
+}
+
+
+ul li ul {
+  list-style-type: none;
+}
+.berries-list a {
+  text-decoration: none;
+}
+
+ol {
+  list-style-position: inside;
+}
+
+ol li {
+  /* margin-bottom: 8px; */
+  line-height: 1.4;
+  text-align: justify;
+}

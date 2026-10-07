@@ -1,0 +1,65 @@
+
+#specialStrong{
+    font-weight: bold;
+}
+body {
+  font-family: 'Times New Roman', serif;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  border: 2px solid #2e4392;
+  width: 90%;
+  max-width: 900px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.recipe-title {
+  color: #d11e1e;
+  text-align: center;
+  font-size: 34px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#products-heading {
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 26px;
+  margin-bottom: 25px;
+}
+
+.ingredients p {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 6px 0;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.highlight {
+  background-color: #ffff54;
+  padding: 1px 4px;
+}
+
+.divider {
+  border-bottom: 5px solid #277e38;
+  margin: 35px auto 25px auto;
+  width: 75%;
+}
+
+.recipe-footer {
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.5;
+}
