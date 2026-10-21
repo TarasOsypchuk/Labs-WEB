@@ -1,0 +1,95 @@
+/* Дизайн форми анкети: шрифт, текст, колір фону */
+
+body {
+    background-color: #eef2f7;
+    color: #2b2d42;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #1d3557;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+form {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    background-color: #ffffff;
+}
+
+fieldset {
+    padding: 10px 20px;
+    background-color: #f1faee;
+    border: 2px solid #a8dadc;
+}
+
+legend {
+    padding: 0 10px;
+    font-size: 18px;
+    font-variant: small-caps;
+    color: #457b9d;
+}
+
+label {
+    font-style: italic;
+}
+
+span {
+    font-weight: bold;
+    color: #1d3557;
+}
+
+/* Текстові поля, списки, textarea */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="date"],
+input[list],
+select,
+textarea {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 450px;
+    padding: 6px 8px;
+    font-family: inherit;
+    font-size: 15px;
+    color: #1d3557;
+    background-color: #ffffff;
+    border: 1px solid #a8dadc;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    background-color: #fffde7;
+    outline: 2px solid #457b9d;
+}
+
+/* Кнопки */
+button {
+    margin: 5px;
+    padding: 8px 16px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #457b9d;
+    border: none;
+    cursor: pointer;
+}
+
+button[type="reset"] {
+    background-color: #e63946;
+}
+
+a {
+    color: #457b9d;
+}

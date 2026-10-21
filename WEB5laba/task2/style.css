@@ -1,0 +1,43 @@
+/* Селектори класів та ідентифікаторів не використовуються */
+
+body {
+    margin: 20px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+table {
+    width: 100%;
+    max-width: 900px;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th,
+td {
+    border: 2px solid #fff;
+    padding: 25px 10px;
+    font-size: 22px;
+}
+
+/* Шапка: від найсвітлішого до найтемнішого відтінку */
+thead th {
+    color: #fff;
+    font-size: 24px;
+}
+thead th:nth-child(1) { background-color: #f2dcdb; font-size: 18px; }
+thead th:nth-child(2) { background-color: #e6b8b7; }
+thead th:nth-child(3) { background-color: #d99694; }
+thead th:nth-child(4) { background-color: #953735; }
+thead th:nth-child(5) { background-color: #632523; }
+
+/* Перший стовпець у тілі таблиці */
+tbody th {
+    background-color: #c0504d;
+    color: #fff;
+    font-weight: normal;
+    text-align: center;
+}
+
+/* Чергування рядків – працює і при додаванні нових рядків */
+tbody tr:nth-child(odd) td  { background-color: #e6b8b7; }
+tbody tr:nth-child(even) td { background-color: #f2dcdb; }

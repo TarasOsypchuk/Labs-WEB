@@ -1,7 +1,5 @@
 
-#specialStrong{
-    font-weight: bold;
-}
+
 body {
   font-family: 'Times New Roman', serif;
   background-color: #ffffff;
@@ -62,4 +60,8 @@ body {
   font-style: italic;
   font-size: 17px;
   line-height: 1.5;
+}
+
+.special-strong{
+    font-weight: bold;
 }

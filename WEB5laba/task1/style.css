@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* div */
+.wraper {
+    background-color: rgb(255, 165, 0);
+    width: 500px;
+    padding: 20px;
+    color: #fff;
+}
+
+/* h1 */
+h1 {
+    font-size: 25px;
+    font-weight: 900;
+    margin: 0 0 10px;
+}
+
+/* Списки (загальні вимоги): маркер всередині, картинка через background */
+ul {
+    list-style: none inside;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    background-repeat: no-repeat;
+}
+
+/* Список 1-го рівня.
+   Відступи 20px / 50px та фон задані на li, щоб іконка стояла
+   в лівому відступі на зеленому фоні (як на зразку). */
+.wraper > ul > li {
+    background-color: rgb(103, 158, 128);
+    background-image: url('icons/rule.png');
+    background-position: 10px 6px;
+    background-size: 30px 30px;
+    padding: 0 20px 0 50px;
+    margin-bottom: 15px;
+}
+
+/* Список 2-го рівня */
+.inside_list {
+    font-size: 18px;
+    font-style: italic;
+}
+
+.inside_list li {
+    background-color: rgb(153, 180, 102);
+    background-position: 5px center;
+    background-size: 28px 28px;
+    margin-bottom: 10px;
+    padding: 0 0 0 40px;
+}
+
+/* Іконки 2-го рівня */
+.route    { background-image: url('icons/ad_units.png'); }
+.tickets  { background-image: url('icons/airplane_ticket.png'); }
+.hotel    { background-image: url('icons/hotel.png'); }
+.car      { background-image: url('icons/car_rental.png'); }
+.bar      { background-image: url('icons/local_bar.png'); }
+.casino   { background-image: url('icons/casino.png'); }
+.museum   { background-image: url('icons/museum.png'); }
+.festival { background-image: url('icons/festival.png'); }
+
+/* span */
+.wraper span {
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+/* span у списку 1-го рівня */
+.wraper > ul > li > span {
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    background-color: rgb(199, 124, 106);
+    margin-bottom: 10px;
+}
+
+/* span у списку 2-го рівня */
+.inside_list li span {
+    background-color: rgb(218, 106, 32);
+}

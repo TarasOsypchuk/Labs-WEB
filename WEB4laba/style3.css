@@ -10,7 +10,7 @@ a {
 }
 
 
-.berries-list {
+.square-list {
   list-style-type: square;
 }
 
@@ -24,7 +24,7 @@ a {
 ul li ul {
   list-style-type: none;
 }
-.berries-list a {
+.square-list a {
   text-decoration: none;
 }
 
@@ -36,4 +36,9 @@ ol li {
   /* margin-bottom: 8px; */
   line-height: 1.4;
   text-align: justify;
+}
+
+.unstyle-link{
+    color:black;
+    text-decoration: none;
 }

@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+}
+
+h2 {
+    margin: 30px 0 10px;
+}
+
+/* ---------- 1. box-sizing ---------- */
+.part1 div {
+    display: inline-block;
+    vertical-align: top;
+    width: 300px;
+    padding: 20px;
+    border: 5px solid #2e7d32;
+    margin: 20px;
+    background-color: #c8e6c9;
+}
+
+.part1 div:nth-of-type(1) {
+    box-sizing: content-box;
+    /* Загальна ширина: 300 + 2 * 20 + 2 * 5 = 350px */
+}
+
+.part1 div:nth-of-type(2) {
+    box-sizing: border-box;
+    /* Загальна ширина: 300px */
+}
+
+/* ---------- 2. overflow ---------- */
+.part2 {
+    margin-bottom: 120px;   /* місце під текстом, що виходить за межі (visible) */
+}
+
+.part2 div {
+    display: inline-block;
+    vertical-align: top;
+    width: 250px;
+    max-height: 80px;
+    margin: 0 15px 15px 0;
+    border: 2px solid #1565c0;
+    background-color: #e3f2fd;
+}
+
+.of-visible { overflow: visible; }
+.of-hidden  { overflow: hidden; }
+.of-scroll  { overflow: scroll; }
+.of-auto    { overflow: auto; }
+
+/* ---------- 3. display ---------- */
+.part3 ul {
+    list-style: none;   /* маркери приховано */
+    margin: 0;
+    padding: 0;
+}
+
+.part3 li {
+    display: inline-block;
+}
+
+.part3 a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #6a1b9a;
+    text-decoration: none;
+}
+
+.part3 a:hover {
+    background-color: #9c27b0;
+}
+
+/* display: none повністю прибирає елемент із потоку документа:
+   він не відображається, не займає місця, його немає в дереві доступності,
+   а сусідні пункти зсуваються.
+   На відміну від цього:
+   - visibility: hidden  – елемент невидимий, але місце під нього зберігається;
+   - opacity: 0          – елемент прозорий, але займає місце і лишається клікабельним;
+   - position: absolute + left: -9999px – елемент винесено за екран, але він доступний для скрінрідерів. */
+.part3 .hidden-item {
+    display: none;
+}
