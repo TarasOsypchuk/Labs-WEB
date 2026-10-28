@@ -1,0 +1,268 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #444;
+    background-color: #fff;
+}
+
+.page {
+    padding: 30px 40px;
+}
+
+/* ---------- Верхня панель ---------- */
+.topbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+}
+
+.top-link {
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #404040;
+    text-decoration: none;
+}
+
+.top-link:hover {
+    background-color: #f1f1f1;
+    text-decoration: underline;
+}
+
+.top-link:focus,
+.icon-link:focus {
+    outline: 2px solid #4d90fe;
+}
+
+.icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.icon-link:hover {
+    background-color: #f1f1f1;
+}
+
+.bell {
+    width: 22px;
+    height: 22px;
+}
+
+.avatar {
+    background-color: #8d6e63;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.avatar:hover {
+    background-color: #6d4c41;
+}
+
+/* ---------- Кнопка попапу ---------- */
+.apps {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+.popup-toggle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.popup-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.popup-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.popup-toggle:hover + .popup-button {
+    background-color: #eee;
+}
+
+.popup-toggle:focus + .popup-button {
+    outline: 2px solid #4d90fe;
+}
+
+.popup-toggle:checked + .popup-button {
+    background-color: #e4e4e4;
+}
+
+/* ---------- Попап ---------- */
+.popup {
+    position: absolute;
+    top: 48px;
+    right: -70px;
+    width: 340px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+    /* закритий попап не потрапляє в порядок Tab (visibility: hidden) */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.15s, visibility 0s linear 0.15s;
+}
+
+.popup::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 62px;
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    transform: rotate(45deg);
+}
+
+.popup-toggle:checked ~ .popup {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+.popup-scroll {
+    position: relative;
+    max-height: 340px;
+    padding: 14px 8px;
+    overflow-y: auto;
+    background-color: #fff;
+}
+
+.popup-scroll:focus {
+    outline: 2px solid #4d90fe;
+    outline-offset: -2px;
+}
+
+.popup-scroll::-webkit-scrollbar {
+    width: 10px;
+}
+
+.popup-scroll::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+}
+
+.popup-scroll::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* ---------- Іконки в попапі ---------- */
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px 4px;
+    border: 1px solid transparent;
+    color: #555;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.app img {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 8px;
+    object-fit: contain;
+}
+
+.app:hover {
+    border-color: #e5e5e5;
+    background-color: #fafafa;
+}
+
+.app:focus {
+    outline: none;
+    border-color: #4d90fe;
+}
+
+/* додаткові іконки приховані (display: none → не беруть участі в Tab) */
+.app-extra {
+    display: none;
+}
+
+.popup:has(.more-toggle:checked) .app-extra {
+    display: flex;
+}
+
+/* ---------- Нижня частина попапу з кнопкою More ---------- */
+.popup-footer {
+    position: relative;
+    height: 40px;
+    border-top: 1px solid #ddd;
+    background-color: #f5f5f5;
+}
+
+.more-toggle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.footer-text {
+    display: block;
+    height: 100%;
+    line-height: 39px;
+    font-size: 13px;
+    text-align: center;
+    color: #666;
+}
+
+.more-toggle:hover + .footer-text {
+    background-color: #e9e9e9;
+}
+
+.more-toggle:focus + .footer-text {
+    outline: 2px solid #4d90fe;
+    outline-offset: -2px;
+}
+
+.text-less {
+    display: none;
+}
+
+.popup:has(.more-toggle:checked) .text-more {
+    display: none;
+}
+
+.popup:has(.more-toggle:checked) .text-less {
+    display: inline;
+}

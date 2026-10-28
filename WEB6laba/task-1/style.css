@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: Arial, sans-serif;
+    background: #fff;
+}
+
+.wrapper {
+    position: relative;
+    width: 320px;
+    height: 205px;
+}
+
+.block {
+    position: absolute;
+    box-sizing: border-box;
+    padding-top: 8px;
+    border: 2px solid #404040;
+    color: #fff;
+    font-size: 17px;
+    text-align: center;
+}
+
+/* два сині блоки зверху */
+.block-1 {
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 105px;
+    background-color: #548cd6;
+}
+
+.block-2 {
+    top: 0;
+    left: 165px;
+    width: 150px;
+    height: 105px;
+    background-color: #548cd6;
+}
+
+/* широкий фіолетовий блок знизу */
+.block-3 {
+    top: 118px;
+    left: 0;
+    width: 315px;
+    height: 75px;
+    background-color: #5e4778;
+    z-index: 1;
+}

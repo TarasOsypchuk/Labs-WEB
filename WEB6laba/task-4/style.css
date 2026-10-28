@@ -1,0 +1,213 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+/* ---------- Спільні правила підменю (2-й і 3-й рівні) ---------- */
+.has-sub > .sub {
+    display: none;
+}
+
+.has-sub:hover > .sub,
+.has-sub:focus-within > .sub {
+    display: block;
+}
+
+.sub {
+    position: absolute;
+    min-width: 200px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.sub .sub {
+    top: 0;
+    left: 100%;
+}
+
+.sub-item {
+    position: relative;
+}
+
+.sub-link {
+    display: block;
+    padding: 11px 16px;
+    font-size: 14px;
+    white-space: nowrap;
+    color: white;
+}
+
+.sub-item.has-sub > .sub-link::after {
+    content: '▸';
+    float: right;
+    margin-left: 16px;
+}
+
+/* ---------- Горизонтальна панель (fixed) ---------- */
+.topnav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    background-color: #555;
+    z-index: 100;
+}
+
+.topnav-list::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.topnav-item {
+    position: relative;
+    float: left;
+}
+
+/* останній пункт — праворуч */
+.topnav-item--right {
+    float: right;
+}
+
+.topnav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 48px;
+    color: white;
+}
+
+.topnav-item:hover > .topnav-link {
+    background-color: #777;
+}
+
+.topnav-item.active > .topnav-link {
+    background-color: #4caf50;
+}
+
+.topnav .sub {
+    top: 100%;
+    left: 0;
+    background-color: #666;
+}
+
+.topnav .sub-item:hover > .sub-link {
+    background-color: #888;
+}
+
+/* правий пункт: підменю відкриваються вліво, щоб не виходити за екран */
+.topnav-item--right .sub {
+    left: auto;
+    right: 0;
+}
+
+.topnav-item--right .sub .sub {
+    left: auto;
+    right: 100%;
+}
+
+/* ---------- Вертикальна панель (fixed, повна висота) ---------- */
+.sidenav {
+    position: fixed;
+    top: 48px;
+    bottom: 0;
+    left: 0;
+    width: 210px;
+    background-color: #0b6cbf;
+    z-index: 90;
+}
+
+.sidenav-item {
+    position: relative;
+    border-bottom: 1px solid #3a8bd1;
+}
+
+.sidenav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 46px;
+    padding: 0 16px;
+    font-size: 15px;
+    color: white;
+}
+
+.sidenav-item:hover > .sidenav-link {
+    background-color: #0a5aa0;
+}
+
+.sidenav-item.active > .sidenav-link {
+    background-color: #08467d;
+    font-weight: 700;
+}
+
+.sidenav .sub {
+    top: 0;
+    left: 100%;
+    background-color: #0b6cbf;
+}
+
+.sidenav .sub-item:hover > .sub-link {
+    background-color: #0a5aa0;
+}
+
+/* ---------- Контент ---------- */
+.content {
+    margin: 48px 0 0 210px;
+    padding: 0 32px 40px;
+}
+
+/* «липка» панель розділів */
+.page-tabs {
+    position: sticky;
+    top: 48px;
+    margin: 0 -32px 20px;
+    padding: 12px 32px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    z-index: 50;
+}
+
+.page-tab {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 6px 14px;
+    border-radius: 4px;
+    color: #0b6cbf;
+    font-size: 14px;
+}
+
+.page-tab:hover {
+    background-color: #0b6cbf;
+    color: white;
+}
+
+section {
+    scroll-margin-top: 110px;
+    max-width: 720px;
+    line-height: 1.6;
+}

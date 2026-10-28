@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Завдання 4 — навігаційні панелі</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Набір піктограм у стилі Google Material Icons (inline SVG, працює без інтернету) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-home" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></symbol>
+        <symbol id="i-search" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></symbol>
+        <symbol id="i-info" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></symbol>
+        <symbol id="i-work" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></symbol>
+        <symbol id="i-person" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></symbol>
+    </svg>
+
+    <!-- ===== Горизонтальна панель: fixed, останній пункт праворуч через float ===== -->
+    <nav class="topnav">
+        <ul class="topnav-list">
+            <li class="topnav-item active">
+                <a class="topnav-link" href="#" title="Головна"><svg class="icon"><use href="#i-home"/></svg></a>
+            </li>
+            <li class="topnav-item has-sub">
+                <a class="topnav-link" href="#" title="Пошук"><svg class="icon"><use href="#i-search"/></svg></a>
+                <ul class="sub">
+                    <li class="sub-item"><a class="sub-link" href="#">Пошук по сайту</a></li>
+                    <li class="sub-item has-sub">
+                        <a class="sub-link" href="#">Розширений пошук</a>
+                        <ul class="sub">
+                            <li class="sub-item"><a class="sub-link" href="#">За датою</a></li>
+                            <li class="sub-item"><a class="sub-link" href="#">За автором</a></li>
+                            <li class="sub-item"><a class="sub-link" href="#">За темою</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-item"><a class="sub-link" href="#">Історія пошуку</a></li>
+                </ul>
+            </li>
+            <li class="topnav-item has-sub">
+                <a class="topnav-link" href="#" title="Пошта"><svg class="icon"><use href="#i-mail"/></svg></a>
+                <ul class="sub">
+                    <li class="sub-item"><a class="sub-link" href="#">Вхідні</a></li>
+                    <li class="sub-item has-sub">
+                        <a class="sub-link" href="#">Папки</a>
+                        <ul class="sub">
+                            <li class="sub-item"><a class="sub-link" href="#">Робота</a></li>
+                            <li class="sub-item"><a class="sub-link" href="#">Навчання</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-item"><a class="sub-link" href="#">Надіслані</a></li>
+                </ul>
+            </li>
+            <li class="topnav-item topnav-item--right has-sub">
+                <a class="topnav-link" href="#" title="Профіль"><svg class="icon"><use href="#i-person"/></svg></a>
+                <ul class="sub">
+                    <li class="sub-item"><a class="sub-link" href="#">Мій профіль</a></li>
+                    <li class="sub-item has-sub">
+                        <a class="sub-link" href="#">Налаштування</a>
+                        <ul class="sub">
+                            <li class="sub-item"><a class="sub-link" href="#">Безпека</a></li>
+                            <li class="sub-item"><a class="sub-link" href="#">Сповіщення</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-item"><a class="sub-link" href="#">Вийти</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- ===== Вертикальна панель: fixed на повну висоту, 3 рівні вкладеності ===== -->
+    <nav class="sidenav">
+        <ul class="sidenav-list">
+            <li class="sidenav-item active">
+                <a class="sidenav-link" href="#"><svg class="icon"><use href="#i-home"/></svg>Home</a>
+            </li>
+            <li class="sidenav-item has-sub">
+                <a class="sidenav-link" href="#"><svg class="icon"><use href="#i-info"/></svg>About</a>
+                <ul class="sub">
+                    <li class="sub-item"><a class="sub-link" href="#">Історія</a></li>
+                    <li class="sub-item has-sub">
+                        <a class="sub-link" href="#">Команда</a>
+                        <ul class="sub">
+                            <li class="sub-item"><a class="sub-link" href="#">Розробники</a></li>
+                            <li class="sub-item"><a class="sub-link" href="#">Дизайнери</a></li>
+                            <li class="sub-item"><a class="sub-link" href="#">Менеджери</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-item"><a class="sub-link" href="#">Контакти</a></li>
+                </ul>
+            </li>
+            <li class="sidenav-item has-sub">
+                <a class="sidenav-link" href="#"><svg class="icon"><use href="#i-work"/></svg>Work With Me</a>
+                <ul class="sub">
+                    <li class="sub-item"><a class="sub-link" href="#">Послуги</a></li>
+                    <li class="sub-item has-sub">
+                        <a class="sub-link" href="#">Портфоліо</a>
+                        <ul class="sub">
+                            <li class="sub-item"><a class="sub-link" href="#">Веб-сайти</a></li>
+                            <li class="sub-item"><a class="sub-link" href="#">Застосунки</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-item"><a class="sub-link" href="#">Ціни</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <!-- «Липка» (sticky) панель розділів сторінки -->
+        <div class="page-tabs">
+            <a class="page-tab" href="#s1">Розділ 1</a>
+            <a class="page-tab" href="#s2">Розділ 2</a>
+            <a class="page-tab" href="#s3">Розділ 3</a>
+            <a class="page-tab" href="#s4">Розділ 4</a>
+        </div>
+
+        <h1>Навігаційні панелі</h1>
+        <p>Прокрутіть сторінку: горизонтальна й вертикальна панелі закріплені (<code>position: fixed</code>), а панель розділів нижче «прилипає» під верхнім меню (<code>position: sticky</code>).</p>
+
+        <section id="s1"><h2>Розділ 1</h2>
+            <p>Позиціонування елементів дозволяє створювати багатошарові макети: випадні меню, підказки та спливаючі вікна. Значення <code>relative</code>, <code>absolute</code>, <code>fixed</code> і <code>sticky</code> по-різному впливають на місце елемента в потоці документа.</p>
+            <p>Батьківський елемент із <code>position: relative</code> стає точкою відліку для абсолютно позиціонованих нащадків — саме так працюють випадні підменю в цій навігації.</p>
+        </section>
+        <section id="s2"><h2>Розділ 2</h2>
+            <p>Псевдокласи <code>:hover</code> і <code>:focus-within</code> дозволяють показувати підменю без JavaScript. Активний пункт меню виділяється окремим класом <code>active</code>.</p>
+            <p>Три рівні вкладеності: перший рівень — піктограми (у вертикальній панелі — піктограми з назвою), другий — випадний список, третій — випадний список збоку від другого.</p>
+        </section>
+        <section id="s3"><h2>Розділ 3</h2>
+            <p>Для вирівнювання останнього пункту горизонтального меню праворуч використано плавання <code>float: right</code>, а для контейнера списку — «clearfix» через <code>::after</code>.</p>
+            <p>Висота вертикальної панелі задана парою <code>top</code> і <code>bottom</code>, тому вона займає всю доступну висоту вікна.</p>
+        </section>
+        <section id="s4"><h2>Розділ 4</h2>
+            <p>Z-index верхньої панелі більший, ніж у бічної, тому випадні підменю горизонтального меню перекривають решту інтерфейсу.</p>
+            <p>Додатковий текст потрібен лише для того, щоб на сторінці з'явилась прокрутка і було видно, як поводяться закріплена та «липка» панелі.</p>
+            <p style="height:600px">&nbsp;</p>
+        </section>
+    </main>
+</body>
+</html>

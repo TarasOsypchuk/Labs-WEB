@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Завдання 6 — Попап</title>
+    <link rel="icon" href="icons/favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="top-link" href="#">Mail</a>
+        <a class="top-link" href="#">Images</a>
+
+        <div class="apps">
+            <!-- Прихований чекбокс керує станом попапу без JavaScript.
+                 Він лишається у порядку Tab і перехоплює кліки над кнопкою. -->
+            <input class="popup-toggle" type="checkbox" id="popup-toggle" aria-label="Програми">
+            <label class="popup-button" for="popup-toggle">
+                <img src="icons/popup-button.png" alt="">
+            </label>
+
+            <div class="popup">
+                <div class="popup-scroll" tabindex="0">
+                    <div class="grid">
+                        <a class="app" href="#"><img src="icons/calendar.png" alt=""><span>Calendar</span></a>
+                        <a class="app" href="#"><img src="icons/mail.png" alt=""><span>Mail</span></a>
+                        <a class="app" href="#"><img src="icons/news.png" alt=""><span>News</span></a>
+                        <a class="app" href="#"><img src="icons/maps.png" alt=""><span>Maps</span></a>
+                        <a class="app" href="#"><img src="icons/files.png" alt=""><span>Files</span></a>
+                        <a class="app" href="#"><img src="icons/contacts.png" alt=""><span>Contacts</span></a>
+                        <a class="app" href="#"><img src="icons/tanslation.png" alt=""><span>Translate</span></a>
+                        <a class="app" href="#"><img src="icons/videos.png" alt=""><span>Videos</span></a>
+                        <a class="app" href="#"><img src="icons/search.png" alt=""><span>Search</span></a>
+                        <a class="app" href="#"><img src="icons/photos.png" alt=""><span>Photos</span></a>
+                        <a class="app" href="#"><img src="icons/apps.png" alt=""><span>Apps</span></a>
+                        <a class="app" href="#"><img src="icons/documents.png" alt=""><span>Documents</span></a>
+
+                        <!-- додаткові іконки: з'являються після натискання «More» -->
+                        <a class="app app-extra" href="#"><img src="icons/chat.png" alt=""><span>Chat</span></a>
+                        <a class="app app-extra" href="#"><img src="icons/classroom.png" alt=""><span>Classroom</span></a>
+                        <a class="app app-extra" href="#"><img src="icons/collection.png" alt=""><span>Collection</span></a>
+                        <a class="app app-extra" href="#"><img src="icons/mars.png" alt=""><span>Mars</span></a>
+                        <a class="app app-extra" href="#"><img src="icons/blogs.png" alt=""><span>Blogs</span></a>
+                        <a class="app app-extra" href="#"><img src="icons/promo.png" alt=""><span>Promos</span></a>
+                    </div>
+                </div>
+
+                <div class="popup-footer">
+                    <input class="more-toggle" type="checkbox" id="more-toggle" aria-label="More">
+                    <span class="footer-text">
+                        <span class="text-more">More</span>
+                        <span class="text-less">Even more from Kottans</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <a class="icon-link" href="#"><img class="bell" src="icons/bell.png" alt="Сповіщення"></a>
+        <a class="icon-link avatar" href="#" aria-label="Профіль">К</a>
+    </header>
+
+    <main class="page">
+        <h1>Лабораторна робота №6</h1>
+        <p>Натисніть на іконку з дев'яти крапок у правому верхньому куті, щоб відкрити попап. Керування працює і з клавіатури: <kbd>Tab</kbd> — перехід, <kbd>Пробіл</kbd> — відкрити/закрити.</p>
+    </main>
+</body>
+</html>

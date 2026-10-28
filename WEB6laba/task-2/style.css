@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: Arial, sans-serif;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 110px 210px;
+    grid-template-rows: 32px 90px;
+    gap: 8px 10px;
+}
+
+.block {
+    box-sizing: border-box;
+    border: 2px solid #404040;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 4px;
+}
+
+.block-1 {
+    grid-area: 1 / 1;
+    background-color: #00b050;
+    color: #111;
+    cursor: pointer;
+}
+
+/* Блоки 2 і 3 приховані через opacity + visibility (місце в потоці зберігається).
+   Затримка visibility дає час перевести курсор з одного блоку на інший. */
+.block-2,
+.block-3 {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s, visibility 0s linear 0.4s;
+}
+
+.block-2 {
+    grid-area: 1 / 2;
+    background-color: #548cd6;
+    color: #fff;
+}
+
+.block-3 {
+    grid-area: 2 / 2;
+    background-color: #5e4778;
+    color: #fff;
+}
+
+/* hover на Блок 1 → з'являється Блок 2 */
+.block-1:hover + .block-2,
+.block-2:hover,
+.wrapper:has(.block-3:hover) .block-2 {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+/* hover на Блок 2 → з'являється Блок 3 */
+.block-2:hover + .block-3,
+.block-3:hover {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
